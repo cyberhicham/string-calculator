@@ -1,0 +1,24 @@
+{
+    "name": "cyberhicham/string-calculator",
+    "description": "String calculator by cyberhicham",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hicham LEMGHARI",
+            "email": "cyberhicham@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "StringCalculator\\": "src/",
+            "Tests\\": "tests/"
+        }
+    }
+}
