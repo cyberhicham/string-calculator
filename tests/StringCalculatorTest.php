@@ -23,7 +23,20 @@ class StringCalculatorTest extends TestCase
 
         $this->assertSame(3, $calculator->add("//;\n1;2"),'we should have 3 as a result');
 
-        $this->assert(6, $calculator->add("1,-2,-3"),'error: negatives not allowed: -2 -3');
+        $this->assertSame(2, $calculator->add("1001, 2"), 'we should get 2 as a result');
 
+        $this->assertSame(6, $calculator->add("//[***]\n1***2***3"),'we should get 6 as a result');
+
+    }
+
+    public function testException()
+    {
+        $this->expectException(\Exception::class);
+
+        $this->expectExceptionMessage('negatives not allowed: -2 -3');
+
+        $calculator = new StringCalculator;
+
+        $calculator->add("1,-2,-3");
     }
 }
